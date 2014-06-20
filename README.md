@@ -11,13 +11,13 @@ This example WebDriver test uses the PageObject pattern (via PageFactory). The t
 6. Then grabs all results in the *main* section and prints out the links, associated title and descriptions. The information in a collection and assert that only 10 links are returned.
 7. From all the *descriptions* that were stored previously, count the number of times "tidemark" string appears. Print this number.
 
-# Running using Maven
+# Run test using Maven
 To run using Maven command-line:
 ```bash
 $ mvn integration-test
 ```
 
-# Running using Eclipse & TestNG plugin
+# Run test using Eclipse & TestNG plugin
 
 1. Open Run > Run Configurations...
 2. Right-click on "TestNG" and select "New"
