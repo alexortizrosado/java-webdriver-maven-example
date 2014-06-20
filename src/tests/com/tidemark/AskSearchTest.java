@@ -41,6 +41,7 @@ public class AskSearchTest {
   public void SearchForTidemarkOnAsk() throws Exception {
     String query = "tidemark";
     List<String> descriptionsWithTidemark = new ArrayList<String>();
+    
     // Go to ask.com and search for the term "tidemark"
     AskResultsPage results = new AskSearchPage(driver).search(query);
 
