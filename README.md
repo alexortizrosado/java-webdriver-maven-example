@@ -3,10 +3,10 @@ tidemark-webdriver
 
 Example WebDriver tests using TestNG, WebDriver and Maven
 
-This example WebDriver tests uses the PageObject pattern (via PageFactory). The test does the following:
+This example WebDriver test uses the PageObject pattern (via PageFactory). The test does the following:
 
 1. Opens a Chrome browser
-2. Navigates to ask.com
+2. Navigates to [ask.com]
 3. Searches for the term "tidemark"
 4. Grabs all the results in the *main* section and prints out the link, associated title and description. The information is stored in a collection. The test then asserts that only 10 results are returned.
 5. Using the navigation at the bottom of the page, goes to the "Next" page.
