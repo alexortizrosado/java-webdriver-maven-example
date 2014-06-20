@@ -1,4 +1,4 @@
-Example WebDriver tests using TestNG, WebDriver and Maven
+Example WebDriver test using TestNG, WebDriver and Maven
 ==================
 
 This example WebDriver test uses the PageObject pattern (via PageFactory). The test does the following:
@@ -17,7 +17,7 @@ To run using Maven command-line:
 $ mvn integration-test
 ```
 
-# Running using Eclipse > TestNG plugin
+# Running using Eclipse & TestNG plugin
 
 1. Open Run > Run Configurations...
 2. Right-click on "TestNG" and select "New"
