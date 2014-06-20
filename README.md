@@ -3,7 +3,8 @@ tidemark-webdriver
 
 Example WebDriver tests using TestNG, WebDriver and Maven
 
-This example WebDriver tests uses the PageObject pattern (via PageFactory). The test is simple:
+This example WebDriver tests uses the PageObject pattern (via PageFactory). The test does the following:
+
 1. Opens a Chrome browser
 2. Navigates to ask.com
 3. Searches for the term "tidemark"
@@ -13,6 +14,7 @@ This example WebDriver tests uses the PageObject pattern (via PageFactory). The 
 7. From all the *descriptions* that were stored previously, count the number of times "tidemark" string appears. Print this number.
  
 The following criteria were used in developing:
+
 1. Create a new project. Do not use any existing project
 2. You can run this against any browser of your choice
 3. You *must* use Java and Selenium / WebDriver
@@ -20,6 +22,7 @@ The following criteria were used in developing:
  
 *Extra credit:*
 Doing the following is not a requirement but they are nice-to-haves that we would like to see:
+
 1. Modular code with OO design
 2. Use of Page Object Pattern
 3. Code comments / Java docs
