@@ -1,7 +1,5 @@
-tidemark-webdriver
-==================
-
 Example WebDriver tests using TestNG, WebDriver and Maven
+==================
 
 This example WebDriver test uses the PageObject pattern (via PageFactory). The test does the following:
 
