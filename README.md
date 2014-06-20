@@ -26,3 +26,17 @@ Doing the following is not a requirement but they are nice-to-haves that we woul
 3. Code comments / Java docs
 4. Logging using a logging framework instead of System.out.println(). (No need for a configuration file)
 5. Using *TestNG's* configuration/test methods to run the program
+
+# Running using Maven
+To run using Maven command-line:
+```bash
+$ mvn integration-test
+```
+
+# Running using Eclipse > TestNG plugin
+
+1. Open Run > Run Configurations...
+2. Right-click on "TestNG" and select "New"
+3. Select "Suite" and check the box for "testng.xml"
+4. Click Save 
+5. Click Run
