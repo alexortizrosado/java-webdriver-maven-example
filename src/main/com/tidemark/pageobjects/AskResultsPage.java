@@ -45,7 +45,7 @@ public class AskResultsPage {
    */
   public int getLinkCount() {
     List<String> links = new ArrayList<String>();
-    for (WebElement result : results){
+    for (WebElement result : results) {
       links.add(getLinkFromSearchResult(result));
     }
     return links.size();
@@ -92,14 +92,21 @@ public class AskResultsPage {
       if (isDictionaryOneBox(result)) {
         continue;
       }
-
+      String title = getTitleFromSearchResult(result);
       reporterData.append(String.format("<li><strong>Title:</strong> %s</li>",
-          getTitleFromSearchResult(result)));
+          title));
+
+      String link = getLinkFromSearchResult(result);
       reporterData.append(String.format("<li><strong>Link:</strong> %s</li>",
-          getLinkFromSearchResult(result)));
+          link));
+
+      String description = getDescriptionFromSearchResult(result);
       reporterData.append(String.format(
-          "<li><strong>Description:</strong> %s</li>",
-          getDescriptionFromSearchResult(result)));
+          "<li><strong>Description:</strong> %s</li>", description));
+
+      logger.info(String.format("Adding result to Reporter: [%s] [%s] [%s]",
+          link, title, description));
+
     }
     reporterData.append("</ul>");
 
@@ -107,30 +114,38 @@ public class AskResultsPage {
     Reporter.log(reporterData.toString());
   }
 
+  /**
+   * Returns the description from a search result.
+   * 
+   * @param result
+   *          search result as a {@code WebElement}.
+   * @return
+   */
   public String getDescriptionFromSearchResult(WebElement result) {
     return result.findElement(By.className("abstract")).getText();
   }
 
-  public String getTitleFromSearchResult(WebElement result) {
+  private String getTitleFromSearchResult(WebElement result) {
     return result.findElements(By.tagName("a")).get(0).getText();
   }
 
-  public String getLinkFromSearchResult(WebElement result) {
+  private String getLinkFromSearchResult(WebElement result) {
     return result.findElements(By.tagName("a")).get(0).getAttribute("href");
   }
 
   /**
-   * Check if the result is a Dictionary.com one-box. The one-box results don't
-   * have a title, link or abstract. Dictionary.com one-boxes generally appear
-   * on the first results page, and not any any subsequent pages.
+   * Check if the result is a dictionary one-box. The one-box results don't have
+   * a title, link or abstract. Dictionary one-boxes generally appear on the
+   * first results page, and not any any subsequent pages.
    * 
    * @param result
    *          an Ask.com search result.
-   * @return returns true if result is a Dictionary.com result, otherwise false.
+   * @return returns true if result is a dictionary result, otherwise false.
    */
   public boolean isDictionaryOneBox(WebElement result) {
     if (result.getAttribute("class").contains("tsrc_SAS")) {
-      logger.warning("Found a dictionary.com one-box. Not parsing for title, link or description...");
+      logger
+          .warning("Found a dictionary one-box. Not parsing for title, link or description...");
       return true;
     }
     return false;
